@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Composite\Blocks;
+namespace Tests\BlockKit\Composites;
 
 use App\Composite\Blocks\Image;
 use PHPUnit\Framework\TestCase;

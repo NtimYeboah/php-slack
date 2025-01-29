@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Composite\Blocks\Base;
+namespace Tests\BlockKit\Blocks;
 
 use App\Composite\Blocks\Base\Context;
 use PHPUnit\Framework\TestCase;
