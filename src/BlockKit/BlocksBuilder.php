@@ -94,8 +94,23 @@ class BlocksBuilder
         return $this;
     }
 
-    public function build()
+    /**
+     * Get array representation of blocks
+     *
+     * @return array
+     */
+    public function toArray()
     {
-        return new Blocks($this->blocks);
+        return $this->blocks;
+    }
+
+    /**
+     * Get json representation of blocks.
+     *
+     * @return string|false
+     */
+    public function toString()
+    {
+        return json_encode($this->blocks);
     }
 }
