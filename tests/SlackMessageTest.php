@@ -4,25 +4,25 @@ namespace Tests;
 
 use App\Blocks\Blocks;
 use App\Blocks\BlocksBuilder;
-use App\Composite\Blocks\Base\Context;
-use App\Composite\Blocks\Base\Header;
-use App\Composite\Blocks\Base\RichText;
-use App\Composite\Blocks\Base\Section;
+use App\BlockKit\Blocks\Context;
+use App\BlockKit\Blocks\Header;
+use App\BlockKit\Blocks\RichText;
+use App\BlockKit\Blocks\Section;
+use App\SlackMessage;
 use PHPUnit\Framework\TestCase;
 
-class BlocksBuilderTest extends TestCase
+class SlackMessageTest extends TestCase
 {
     public function test_can_build_richtext()
     {
-        $blocks = (new BlocksBuilder)
+        $blocks = (new SlackMessage)
             ->richText(function (RichText $block) {
                 $block->text('This is a text');
                 $block->text('This is a bold text')->bold();
                 $block->text('This is an italic text')->italic();
                 $block->text('This is a strikethrough text')->strike();
                 $block->emoji('basketball');
-            })
-            ->build();
+            });
 
         $expected = [
             [
@@ -73,11 +73,10 @@ class BlocksBuilderTest extends TestCase
 
     public function test_can_build_a_header()
     {
-        $blocks = (new BlocksBuilder)
+        $blocks = (new SlackMessage)
             ->header(function (Header $block) {
                 $block->text('This is a header text');
-            })
-            ->build();
+            });
 
         $expected = [
             [
@@ -94,13 +93,12 @@ class BlocksBuilderTest extends TestCase
 
     public function test_can_build_a_context()
     {
-        $blocks = (new BlocksBuilder)
+        $blocks = (new SlackMessage)
             ->context(function (Context $block) {
                 $block->text("*This* is :smile markdown")->markdown();
                 $block->image('http://path/to/image.jpg')->altText('cute cat');
                 $block->text('This is a plain text');
-            })
-            ->build();
+            });
 
         $expected = [
             [
@@ -128,12 +126,11 @@ class BlocksBuilderTest extends TestCase
 
     public function test_can_build_a_section()
     {
-        $blocks = (new BlocksBuilder)
+        $blocks = (new SlackMessage)
             ->section(function (Section $section) {
                 $section->field('This is a field')->markdown();
                 $section->field('This is another field');
-            })
-            ->build();
+            });
         
         $expected = [
             [
@@ -156,9 +153,7 @@ class BlocksBuilderTest extends TestCase
 
     public function test_can_build_divider()
     {
-        $blocks = (new BlocksBuilder)
-            ->divider()
-            ->build();
+        $blocks = (new SlackMessage)->divider();
 
         $expected = [
             [

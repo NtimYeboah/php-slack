@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace App\BlockKit\Composite;
+namespace App\BlockKit;
 
 abstract class Block
 {
-    protected array $block;
+    protected array $blocks;
 
-    protected abstract function block(): array;
+    protected abstract function blocks(): array;
 
     public abstract function render(): array;
 }

@@ -1,10 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace App\Composite\Blocks\Base;
+namespace App\BlockKit\Blocks;
 
-use App\Composite\Blocks\Image;
-use App\Composite\Blocks\Text;
-use App\Composite\CompoundBlock;
+use App\BlockKit\Block;
 use RuntimeException;
 
 class Context extends CompoundBlock

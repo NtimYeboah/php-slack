@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace App\Composite\Blocks\Base;
+namespace App\BlockKit\Blocks;
 
-use App\Composite\CompoundBlock;
+use App\BlockKit\Block;
 
-class Actions extends CompoundBlock
+class Actions extends Block
 {
     protected array $block = [];
 

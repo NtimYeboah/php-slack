@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace App\Composite\Blocks;
+namespace App\BlockKit\Composites;
 
-use App\Composite\Block;
+use App\BlockKit\Block;
 
 class TextStyle extends Block
 {

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Composite\Blocks\Base;
+namespace App\BlockKit\Blocks;
 
 use App\Composite\Blocks\Text;
 use App\Composite\CompoundBlock;

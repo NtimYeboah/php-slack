@@ -1,18 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace App\BlockKit;
+namespace App;
 
-use App\Composite\Blocks\Base\Actions;
-use App\Composite\Blocks\Base\Context;
-use App\Composite\Blocks\Base\Divider;
-use App\Composite\Blocks\Base\Header;
-use App\Composite\Blocks\Base\Image;
-use App\Composite\Blocks\Base\Input;
-use App\Composite\Blocks\Base\RichText;
-use App\Composite\Blocks\Base\Section;
-use Closure;
+require __DIR__ . '/vendor/autoload.php';
 
-class BlocksBuilder
+class SlackMessage
 {
     protected array $blocks = [];
 
