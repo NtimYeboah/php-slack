@@ -3,28 +3,30 @@
 namespace App\BlockKit\Blocks;
 
 use App\BlockKit\Block;
+use App\BlockKit\Composites\Text;
+use App\BlockKit\Composites\Image;
 use RuntimeException;
 
-class Context extends CompoundBlock
+class Context extends Block
 {
     private array $elements = [];
 
-    protected array $block = [
+    protected array $blocks = [
         'type' => 'context',
     ];
 
-    protected function block(): array
+    protected function blocks(): array
     {
-        return $this->block;
+        return $this->blocks;
     }
 
     public function render(): array
     {
         if (count($this->elements) > 0) {
-            $this->block['elements'] = $this->elements();
+            $this->blocks['elements'] = $this->elements();
         }
 
-        return $this->block();
+        return $this->blocks();
     }
 
     public function text(string $text): self

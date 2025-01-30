@@ -2,7 +2,7 @@
 
 namespace Tests\BlockKit\Blocks;
 
-use App\Composite\Blocks\Base\Context;
+use App\BlockKit\Blocks\Context;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 
