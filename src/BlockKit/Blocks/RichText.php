@@ -2,30 +2,30 @@
 
 namespace App\BlockKit\Blocks;
 
-use App\Composite\Blocks\Emoji;
-use App\Composite\Blocks\Text;
-use App\Composite\CompoundBlock;
+use App\BlockKit\Composites\Emoji;
+use App\BlockKit\Composites\Text;
+use App\BlockKit\Block;
 
-class RichText extends CompoundBlock
+class RichText extends Block
 {
     private array $elements = [];
 
-    protected array $block = [
+    protected array $blocks = [
         'type' => 'rich_text',
     ];
 
     public function render(): array
     {
         if (count($this->elements) > 0) {
-            $this->block['elements'] = $this->elements();
+            $this->blocks['elements'] = $this->elements();
         }
 
-        return $this->block();
+        return $this->blocks();
     }
 
-    protected function block(): array
+    protected function blocks(): array
     {
-        return $this->block;
+        return $this->blocks;
     }
 
     public function text(string $text)

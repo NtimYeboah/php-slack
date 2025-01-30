@@ -2,7 +2,7 @@
 
 namespace Tests\BlockKit\Blocks;
 
-use App\Composite\Blocks\Base\RichText;
+use App\BlockKit\Blocks\RichText;
 use PHPUnit\Framework\TestCase;
 
 class RichTextTest extends TestCase
