@@ -6,15 +6,17 @@ use App\BlockKit\Block;
 
 class Actions extends Block
 {
-    protected array $block = [];
+    protected array $blocks = [
+        'type' => 'actions',
+    ];
 
     public function render(): array
     {
-        return [];
+        return $this->blocks();
     }
 
-    public function block(): array
+    public function blocks(): array
     {
-        return [];
+        return $this->blocks;
     }
 }

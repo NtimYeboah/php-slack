@@ -2,7 +2,15 @@
 
 namespace App;
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
+
+use App\BlockKit\Blocks\Context;
+use App\BlockKit\Blocks\Divider;
+use App\BlockKit\Blocks\Header;
+use App\BlockKit\Blocks\RichText;
+use App\BlockKit\Blocks\Section;
+use Closure;
+
 
 class SlackMessage
 {
@@ -30,7 +38,9 @@ class SlackMessage
 
     public function divider()
     {
-        $this->blocks[] = (new Divider)->render();
+        $divider = new Divider;
+
+        $this->blocks[] = $divider->render();
 
         return $this;
     }
@@ -77,12 +87,12 @@ class SlackMessage
 
     public function richText(Closure $callable)
     {
-        $richText = $block = new RichText;
+        $richText = $block = (new RichText);
 
         $callable($richText);
 
         $this->blocks[] = $block->render();
-        
+
         return $this;
     }
 

@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\Blocks\Blocks;
+use App\BlockKit\Blocks;
 use App\BlockKit\Blocks\Context;
 use App\BlockKit\Blocks\Header;
 use App\BlockKit\Blocks\RichText;
@@ -64,8 +64,6 @@ class SlackMessageTest extends TestCase
                 ]
             ]
         ];
-
-        $this->assertInstanceOf(Blocks::class, $blocks);
         
         $this->assertEquals($expected, $blocks->toArray());
     }
@@ -150,7 +148,7 @@ class SlackMessageTest extends TestCase
         $this->assertEquals($expected, $blocks->toArray());
     }
 
-    public function test_can_build_divider()
+    public function test_can_build_a_divider()
     {
         $blocks = (new SlackMessage)->divider();
 

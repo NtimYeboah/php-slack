@@ -45,6 +45,13 @@ class Text extends Block
         return $this;
     }
 
+    public function emoji()
+    {
+        $this->blocks['emoji'] = true;
+
+        return $this;
+    }
+
     public function bold()
     {
         $bold = (new TextStyle)

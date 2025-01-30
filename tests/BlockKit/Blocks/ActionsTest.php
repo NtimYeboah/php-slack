@@ -2,7 +2,7 @@
 
 namespace Tests\BlockKit\Blocks;
 
-use App\Composite\Blocks\Base\Actions;
+use App\BlockKit\Blocks\Actions;
 use PHPUnit\Framework\TestCase;
 
 class ActionsTest extends TestCase

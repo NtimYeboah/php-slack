@@ -42,7 +42,7 @@ class Section extends Block
             if (!($last instanceof Text)) {
                 throw new RuntimeException('Cannot call method on non Text');
             }
-            
+
             $last->emoji();
 
             return $this;
@@ -62,6 +62,11 @@ class Section extends Block
     {
         if ($text === null) {
             $last = $this->fields[count($this->fields) - 1];
+
+            if (!($last instanceof Text)) {
+                throw new RuntimeException('Cannot call method on non-Text');
+            }
+
             $last->markdown();
 
             return $this;
