@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\BlockKit\Blocks;
+namespace NtimYeboah\PhpSlack\Tests\BlockKit\Blocks;
 
-use App\BlockKit\Blocks\RichText;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\RichText;
 use PHPUnit\Framework\TestCase;
 
 class RichTextTest extends TestCase

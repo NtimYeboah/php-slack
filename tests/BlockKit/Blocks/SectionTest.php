@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\BlockKit\Blocks;
+namespace NtimYeboah\PhpSlack\Tests\BlockKit\Blocks;
 
-use App\BlockKit\Blocks\Section;
-use App\BlockKit\Composites\Text;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Section;
+use NtimYeboah\PhpSlack\BlockKit\Composites\Text;
 use PHPUnit\Framework\TestCase;
 
 class SectionTest extends TestCase

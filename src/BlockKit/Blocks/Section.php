@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace App\BlockKit\Blocks;
+namespace NtimYeboah\PhpSlack\BlockKit\Blocks;
 
-use App\BlockKit\Composites\Text;
-use App\BlockKit\Block;
+use NtimYeboah\PhpSlack\BlockKit\Composites\Text;
+use NtimYeboah\PhpSlack\BlockKit\Block;
 use Closure;
 use RuntimeException;
 

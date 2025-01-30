@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\BlockKit\Composites;
+namespace NtimYeboah\PhpSlack\Tests\BlockKit\Composites;
 
-use App\BlockKit\Composites\TextStyle;
+use NtimYeboah\PhpSlack\BlockKit\Composites\TextStyle;
 use PHPUnit\Framework\TestCase;
 
 class TextStyleTest extends TestCase

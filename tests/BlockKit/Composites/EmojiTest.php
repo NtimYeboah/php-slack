@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\BlockKit\Composites;
+namespace NtimYeboah\PhpSlack\Tests\BlockKit\Composites;
 
-use App\BlockKit\Composites\Emoji;
+use NtimYeboah\PhpSlack\BlockKit\Composites\Emoji;
 use PHPUnit\Framework\TestCase;
 
 class EmojiTest extends TestCase

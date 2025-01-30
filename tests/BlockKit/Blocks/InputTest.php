@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\BlockKit\Blocks;
+namespace NtimYeboah\PhpSlack\Tests\BlockKit\Blocks;
 
-use App\BlockKit\Blocks\Input;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Input;
 use PHPUnit\Framework\TestCase;
 
 class InputTest extends TestCase

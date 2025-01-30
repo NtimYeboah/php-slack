@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace App\BlockKit\Blocks;
+namespace NtimYeboah\PhpSlack\BlockKit\Blocks;
 
-use App\BlockKit\Composites\Image as CompositesImage;
-use App\BlockKit\Composites\Text;
+use NtimYeboah\PhpSlack\BlockKit\Composites\Image as CompositesImage;
+use NtimYeboah\PhpSlack\BlockKit\Composites\Text;
 
 class Image extends CompositesImage
 {

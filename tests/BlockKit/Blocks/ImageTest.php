@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\BlockKit\Blocks;
+namespace NtimYeboah\PhpSlack\Tests\BlockKit\Blocks;
 
-use App\BlockKit\Blocks\Image;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Image;
 use PHPUnit\Framework\TestCase;
 
 class ImageTest extends TestCase

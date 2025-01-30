@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\BlockKit\Composites;
+namespace NtimYeboah\PhpSlack\Tests\BlockKit\Composites;
 
-use App\BlockKit\Composites\Text;
+use NtimYeboah\PhpSlack\BlockKit\Composites\Text;
 use PHPUnit\Framework\TestCase;
 
 class TextTest extends TestCase

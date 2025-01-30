@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\BlockKit\Blocks;
+namespace NtimYeboah\PhpSlack\Tests\BlockKit\Blocks;
 
-use App\BlockKit\Blocks\Context;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Context;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 

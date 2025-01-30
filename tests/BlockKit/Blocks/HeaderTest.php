@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\BlockKit\Blocks;
+namespace NtimYeboah\PhpSlack\Tests\BlockKit\Blocks;
 
-use App\BlockKit\Blocks\Header;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Header;
 use PHPUnit\Framework\TestCase;
 
 class HeaderTest extends TestCase

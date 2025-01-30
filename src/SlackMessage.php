@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace App;
+namespace NtimYeboah\PhpSlack;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use App\BlockKit\Blocks\Context;
-use App\BlockKit\Blocks\Divider;
-use App\BlockKit\Blocks\Header;
-use App\BlockKit\Blocks\RichText;
-use App\BlockKit\Blocks\Section;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Context;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Divider;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Header;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\RichText;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Section;
 use Closure;
 
 

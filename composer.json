@@ -22,15 +22,18 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "NtimYeboah\\PhpSlack\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "NtimYeboah\\PhpSlack\\Tests\\": "tests/"
         }
     },
     "scripts": {
         "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
     }
 }

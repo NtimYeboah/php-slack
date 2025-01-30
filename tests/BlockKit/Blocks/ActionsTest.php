@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\BlockKit\Blocks;
+namespace NtimYeboah\PhpSlack\Tests\BlockKit\Blocks;
 
-use App\BlockKit\Blocks\Actions;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Actions;
 use PHPUnit\Framework\TestCase;
 
 class ActionsTest extends TestCase

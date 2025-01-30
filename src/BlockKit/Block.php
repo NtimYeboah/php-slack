@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\BlockKit;
+namespace NtimYeboah\PhpSlack\BlockKit;
 
 abstract class Block
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace Tests;
+namespace NtimYeboah\PhpSlack\Tests;
 
-use App\BlockKit\Blocks;
-use App\BlockKit\Blocks\Context;
-use App\BlockKit\Blocks\Header;
-use App\BlockKit\Blocks\RichText;
-use App\BlockKit\Blocks\Section;
-use App\SlackMessage;
-use App\Requests;
+use NtimYeboah\PhpSlack\BlockKit\Blocks;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Context;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Header;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\RichText;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Section;
+use NtimYeboah\PhpSlack\SlackMessage;
+use NtimYeboah\PhpSlack\Requests;
 use PHPUnit\Framework\TestCase;
 
 class SlackMessageTest extends TestCase

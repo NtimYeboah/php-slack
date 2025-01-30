@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\BlockKit\Composites;
+namespace NtimYeboah\PhpSlack\Tests\BlockKit\Composites;
 
-use App\BlockKit\Composites\Image;
+use NtimYeboah\PhpSlack\BlockKit\Composites\Image;
 use PHPUnit\Framework\TestCase;
 
 class ImageTest extends TestCase

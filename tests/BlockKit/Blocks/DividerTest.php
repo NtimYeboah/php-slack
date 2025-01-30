@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\BlockKit\Blocks;
+namespace NtimYeboah\PhpSlack\Tests\BlockKit\Blocks;
 
-use App\BlockKit\Blocks\Divider;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Divider;
 use PHPUnit\Framework\TestCase;
 
 class DividerTest extends TestCase

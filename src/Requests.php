@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace NtimYeboah\PhpSlack;
 
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;

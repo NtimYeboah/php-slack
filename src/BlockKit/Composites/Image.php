@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace App\BlockKit\Composites;
+namespace NtimYeboah\PhpSlack\BlockKit\Composites;
 
-use App\BlockKit\Block;
+use NtimYeboah\PhpSlack\BlockKit\Block;
 
 class Image extends Block
 {
