@@ -5,6 +5,7 @@ namespace App\BlockKit\Blocks;
 use App\BlockKit\Composites\Text;
 use App\BlockKit\Block;
 use Closure;
+use RuntimeException;
 
 class Section extends Block
 {

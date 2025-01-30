@@ -16,6 +16,12 @@ class SlackMessage
 {
     protected array $blocks = [];
 
+    protected array $payload;
+
+    private string $channel;
+
+    private string $token;
+
     public function section(Closure $callable)
     {
         $section = $block = new Section;
@@ -114,5 +120,38 @@ class SlackMessage
     public function toString()
     {
         return json_encode($this->blocks);
+    }
+
+    public function channel(string $channel)
+    {
+        $this->channel = $channel;
+
+        return $this;
+    }
+
+    public function token(string $token)
+    {
+        $this->token = $token;
+
+        return $this;
+    }
+
+    public function getPayload()
+    {
+        return [
+            'blocks' => $this->blocks,
+            'channel' => $this->channel,
+            'token' => $this->token,
+        ];
+    }
+
+    /**
+     * Send payload to Slack API.
+     *
+     * @return void
+     */
+    public function send()
+    {
+        return Requests::send($this->getPayload());
     }
 }

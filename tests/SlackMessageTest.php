@@ -8,6 +8,7 @@ use App\BlockKit\Blocks\Header;
 use App\BlockKit\Blocks\RichText;
 use App\BlockKit\Blocks\Section;
 use App\SlackMessage;
+use App\Requests;
 use PHPUnit\Framework\TestCase;
 
 class SlackMessageTest extends TestCase
@@ -159,5 +160,98 @@ class SlackMessageTest extends TestCase
         ];
 
         $this->assertEquals($expected, $blocks->toArray());
+    }
+
+    public function test_can_get_payload()
+    {
+        $payload = (new SlackMessage)
+            ->token('123')
+            ->channel('general')
+            ->header(function (Header $header) {
+                $header->text("New event happened in your AWS Account");
+            })
+            ->context(function (Context $context) {
+                $context->text("Action performed by: iamadmin");
+            })
+            ->section(function (Section $section) {
+                $section->field("*Event Time:* 12:02:00")->markdown()
+                    ->field("*Event Name:* StopInstances")->markdown();
+            })
+            ->section(function (Section $section) {
+                $section->field("*IAM user:* iamadmin")->markdown()
+                    ->field("*AWS Region:* us-east-1")->markdown();
+            })
+            ->divider()
+            ->section(function (Section $section) {
+                $section->text('Made with Love from Ntim.');
+            })
+            ->divider()
+            ->getPayload();
+
+
+        $rendered = [
+            'token' => '123',
+            'channel' => 'general',
+            'blocks' => [
+                [
+                    'type' => 'header',
+                    'text' => [
+                        'type' => 'plain_text',
+                        'text' => 'New event happened in your AWS Account',
+                    ]
+                ],
+                [
+                    'type' => 'context',
+                    'elements' => [
+                        [
+                            'type' => 'plain_text',
+                            'text' => 'Action performed by: iamadmin',
+                        ]
+                    ]
+                ],
+                [
+                    'type' => 'section',
+                    'fields' => [
+                        [
+                            'type' => 'mrkdwn',
+                            'text' => '*Event Time:* 12:02:00',
+                        ],
+                        [
+                            'type' => 'mrkdwn',
+                            'text' => '*Event Name:* StopInstances',
+                        ]
+                    ]
+                ],
+                [
+                    'type' => 'section',
+                    'fields' => [
+                        [
+                            'type' => 'mrkdwn',
+                            'text' => '*IAM user:* iamadmin',
+                        ],
+                        [
+                            'type' => 'mrkdwn',
+                            'text' => '*AWS Region:* us-east-1',
+                        ]
+                    ]
+                ],
+                [
+                    'type' => 'divider',
+                ],
+                [
+                    'type' => 'section',
+                    'text' => [
+                        'type' => 'plain_text',
+                        'text' => 'Made with Love from Ntim.',
+                        'emoji' => true,
+                    ],
+                ],
+                [
+                    'type' => 'divider',
+                ],
+            ],
+        ];
+
+        $this->assertEquals($rendered, $payload);
     }
 }
