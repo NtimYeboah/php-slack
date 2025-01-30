@@ -2,7 +2,7 @@
 
 namespace Tests\BlockKit\Composites;
 
-use App\Composite\Blocks\TextStyle;
+use App\BlockKit\Composites\TextStyle;
 use PHPUnit\Framework\TestCase;
 
 class TextStyleTest extends TestCase

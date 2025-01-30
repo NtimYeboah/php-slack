@@ -10,37 +10,37 @@ class TextStyle extends Block
     protected const ITALIC = 'italic';
     protected const STRIKE = 'strike';
 
-    protected array $block = [
+    protected array $blocks = [
         'style' => [],
     ];
 
     public function render(): array
     {
-        return $this->block();
+        return $this->blocks();
     }
 
-    protected function block(): array
+    protected function blocks(): array
     {
-        return $this->block;
+        return $this->blocks;
     }
 
     public function bold()
     {
-        $this->block['style'] = [self::BOLD => true];
+        $this->blocks['style'] = [self::BOLD => true];
 
         return $this;
     }
 
     public function italic()
     {
-        $this->block['style'] = [self::ITALIC => true];
+        $this->blocks['style'] = [self::ITALIC => true];
 
         return $this;
     }
 
     public function strike()
     {
-        $this->block['style'] = [self::STRIKE => true];
+        $this->blocks['style'] = [self::STRIKE => true];
 
         return $this;
     }
