@@ -2,7 +2,7 @@
 
 namespace Tests\BlockKit\Composites;
 
-use App\Composite\Blocks\Emoji;
+use App\BlockKit\Composites\Emoji;
 use PHPUnit\Framework\TestCase;
 
 class EmojiTest extends TestCase

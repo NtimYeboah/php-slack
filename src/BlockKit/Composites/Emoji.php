@@ -6,23 +6,23 @@ use App\BlockKit\Block;
 
 class Emoji extends Block
 {
-    protected array $block = [
+    protected array $blocks = [
         'type' => 'emoji',
     ];
 
     public function render(): array
     {
-        return $this->block();
+        return $this->blocks();
     }
 
-    protected function block(): array
+    protected function blocks(): array
     {
-        return $this->block;
+        return $this->blocks;
     }
 
     public function name(string $name)
     {
-        $this->block['name'] = $name;
+        $this->blocks['name'] = $name;
 
         return $this;
     }
