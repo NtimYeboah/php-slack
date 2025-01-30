@@ -2,7 +2,7 @@
 
 namespace Tests\BlockKit\Composites;
 
-use App\Composite\Blocks\Text;
+use App\BlockKit\Composites\Text;
 use PHPUnit\Framework\TestCase;
 
 class TextTest extends TestCase

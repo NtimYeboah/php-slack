@@ -10,37 +10,37 @@ class Text extends Block
     protected const MARKDOWN = 'mrkdwn';
     protected const PLAIN_TEXT = 'plain_text';
 
-    protected array $block = [
+    protected array $blocks = [
         'type' => self::TEXT,
     ];
 
     public function render(): array
     {
-        return $this->block();
+        return $this->blocks();
     }
 
-    protected function block(): array
+    protected function blocks(): array
     {
-        return $this->block;
+        return $this->blocks;
     }
 
     public function text(String $text)
     {
-        $this->block['text'] = $text;
+        $this->blocks['text'] = $text;
 
         return $this;
     }
 
     public function markdown()
     {
-        $this->block['type'] = self::MARKDOWN;
+        $this->blocks['type'] = self::MARKDOWN;
 
         return $this;
     }
 
     public function plain()
     {
-        $this->block['type'] = self::PLAIN_TEXT;
+        $this->blocks['type'] = self::PLAIN_TEXT;
 
         return $this;
     }
@@ -51,7 +51,7 @@ class Text extends Block
             ->bold()
             ->render();
 
-        $this->block['style'] = $bold['style'];
+        $this->blocks['style'] = $bold['style'];
 
         return $this;
     }
@@ -62,7 +62,7 @@ class Text extends Block
             ->italic()
             ->render();
 
-        $this->block['style'] = $italic['style'];
+        $this->blocks['style'] = $italic['style'];
 
         return $this;
     }
@@ -73,7 +73,7 @@ class Text extends Block
             ->strike()
             ->render();
 
-        $this->block['style'] = $strike['style'];
+        $this->blocks['style'] = $strike['style'];
 
         return $this;
     }
