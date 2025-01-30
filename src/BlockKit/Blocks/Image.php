@@ -2,10 +2,10 @@
 
 namespace App\BlockKit\Blocks;
 
-use App\Composite\Blocks\Image as BlocksImage;
-use App\Composite\Blocks\Text;
+use App\BlockKit\Composites\Image as CompositesImage;
+use App\BlockKit\Composites\Text;
 
-class Image extends BlocksImage
+class Image extends CompositesImage
 {
     public function title(string $text)
     {
@@ -13,14 +13,14 @@ class Image extends BlocksImage
             ->text($text)
             ->plain();
 
-        $this->block['title'] = $text->render();
+        $this->blocks['title'] = $text->render();
 
         return $this;
     }
 
     public function slackFileUrl(string $url)
     {
-        $this->block['slack_file'] = [
+        $this->blocks['slack_file'] = [
             'url' => $url,
         ];
 

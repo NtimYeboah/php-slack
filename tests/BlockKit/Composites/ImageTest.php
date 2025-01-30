@@ -2,7 +2,7 @@
 
 namespace Tests\BlockKit\Composites;
 
-use App\Composite\Blocks\Image;
+use App\BlockKit\Composites\Image;
 use PHPUnit\Framework\TestCase;
 
 class ImageTest extends TestCase

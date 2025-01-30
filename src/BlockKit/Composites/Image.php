@@ -6,30 +6,30 @@ use App\BlockKit\Block;
 
 class Image extends Block
 {
-    protected array $block = [
+    protected array $blocks = [
         'type' => 'image',
     ];
 
     public function render(): array
     {
-        return $this->block();
+        return $this->blocks();
     }
 
-    protected function block(): array
+    protected function blocks(): array
     {
-        return $this->block;
+        return $this->blocks;
     }
 
     public function url(string $url)
     {
-        $this->block['image_url'] = $url;
+        $this->blocks['image_url'] = $url;
 
         return $this;
     }
 
     public function altText(string $text)
     {
-        $this->block['alt_text'] = $text;
+        $this->blocks['alt_text'] = $text;
 
         return $this;
     }
