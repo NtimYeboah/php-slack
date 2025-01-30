@@ -2,13 +2,13 @@
 
 namespace App\BlockKit\Blocks;
 
-use App\Composite\Blocks\Text;
-use App\Composite\CompoundBlock;
+use App\BlockKit\Composites\Text;
+use App\BlockKit\Block;
 use Closure;
 
-class Section extends CompoundBlock
+class Section extends Block
 {
-    protected array $block = [
+    protected array $blocks = [
         'type' => 'section',
     ];
 
@@ -19,24 +19,32 @@ class Section extends CompoundBlock
     public function render(): array
     {
         if (count($this->getFields())) {
-            $this->block['fields'] = $this->getFields();
+            $this->blocks['fields'] = $this->getFields();
         }
         
         if (count($this->getAccessories())) {
-            $this->block['accessory'] = $this->getAccessories();
+            $this->blocks['accessory'] = $this->getAccessories();
         }
         
-        return $this->block();
+        return $this->blocks();
     }
 
-    public function block(): array
+    public function blocks(): array
     {
-        return $this->block;
+        return $this->blocks;
     }
 
     public function text($text = null)
     {
         if ($text === null) {
+            $last = $this->fields[count($this->fields) - 1];
+
+            if (!($last instanceof Text)) {
+                throw new RuntimeException('Cannot call method on non Text');
+            }
+            
+            $last->emoji();
+
             return $this;
         }
 
@@ -44,7 +52,8 @@ class Section extends CompoundBlock
             ->text($text)
             ->plain();
 
-        $this->block['text'] = $text->render();
+        $this->blocks['text'] = $text->render();
+        $this->blocks['text']['emoji'] = true;
 
         return $this;
     }
@@ -62,7 +71,7 @@ class Section extends CompoundBlock
             ->text($text)
             ->markdown();
 
-        $this->block['text'] = $text->render();
+        $this->blocks['text'] = $text->render();
 
         return $this;
     }

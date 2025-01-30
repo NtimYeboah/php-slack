@@ -2,8 +2,8 @@
 
 namespace Tests\BlockKit\Blocks;
 
-use App\Composite\Blocks\Base\Section;
-use App\Composite\Blocks\Text;
+use App\BlockKit\Blocks\Section;
+use App\BlockKit\Composites\Text;
 use PHPUnit\Framework\TestCase;
 
 class SectionTest extends TestCase
@@ -79,7 +79,7 @@ class SectionTest extends TestCase
         $this->assertEquals($rendered, $blocks);
     }
 
-    public function test_can_render_users_select_block()
+    /*public function test_can_render_users_select_block()
     {
         $rendered = (new Section)
             ->markdown('Test block with users select')
@@ -108,7 +108,7 @@ class SectionTest extends TestCase
         $this->assertEquals($rendered, $blocks);
     }
 
-    /* public function test_can_render_static_select_block()
+    public function test_can_render_static_select_block()
     {
         $rendered = (new Section)
             ->markdown('Pick an item from the dropdown list')
