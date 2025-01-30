@@ -2,7 +2,7 @@
 
 namespace Tests\BlockKit\Blocks;
 
-use App\Composite\Blocks\Base\Divider;
+use App\BlockKit\Blocks\Divider;
 use PHPUnit\Framework\TestCase;
 
 class DividerTest extends TestCase

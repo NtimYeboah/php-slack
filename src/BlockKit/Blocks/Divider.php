@@ -2,21 +2,21 @@
 
 namespace App\BlockKit\Blocks;
 
-use App\Composite\Block;
+use App\BlockKit\Block;
 
 class Divider extends Block
 {
-    protected array $block = [
+    protected array $blocks = [
         'type' => 'divider'
     ];
 
     public function render(): array
     {
-        return $this->block();
+        return $this->blocks();
     }
 
-    public function block(): array
+    public function blocks(): array
     {
-        return $this->block;
+        return $this->blocks;
     }
 }
