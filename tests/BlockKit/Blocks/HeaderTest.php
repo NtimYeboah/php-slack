@@ -2,7 +2,7 @@
 
 namespace Tests\BlockKit\Blocks;
 
-use App\Composite\Blocks\Base\Header;
+use App\BlockKit\Blocks\Header;
 use PHPUnit\Framework\TestCase;
 
 class HeaderTest extends TestCase

@@ -2,23 +2,23 @@
 
 namespace App\BlockKit\Blocks;
 
-use App\Composite\Blocks\Text;
-use App\Composite\CompoundBlock;
+use App\BlockKit\Block;
+use App\BlockKit\Composites\Text;
 
-class Header extends CompoundBlock
+class Header extends Block
 {
-    protected array $block = [
+    protected array $blocks = [
         'type' => 'header',
     ];
 
     public function render(): array
     {
-        return $this->block();
+        return $this->blocks();
     }
 
-    public function block(): array
+    public function blocks(): array
     {
-        return $this->block;
+        return $this->blocks;
     }
 
     public function text(string $text)
@@ -27,7 +27,7 @@ class Header extends CompoundBlock
             ->text($text)
             ->plain();
 
-        $this->block['text'] = $text->render();
+        $this->blocks['text'] = $text->render();
        
         return $this;
     }
