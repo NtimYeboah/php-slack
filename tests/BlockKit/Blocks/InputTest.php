@@ -2,7 +2,7 @@
 
 namespace Tests\BlockKit\Blocks;
 
-use App\Composite\Blocks\Base\Input;
+use App\BlockKit\Blocks\Input;
 use PHPUnit\Framework\TestCase;
 
 class InputTest extends TestCase

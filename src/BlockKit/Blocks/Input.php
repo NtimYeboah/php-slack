@@ -2,21 +2,21 @@
 
 namespace App\BlockKit\Blocks;
 
-use App\Composite\CompoundBlock;
+use  App\BlockKit\Block;
 
-class Input extends CompoundBlock
+class Input extends Block
 {
-    protected array $block = [
+    protected array $blocks = [
         'type' => 'input'
     ];
 
     public function render(): array
     {
-        return $this->block();
+        return $this->blocks();
     }
 
-    public function block(): array
+    public function blocks(): array
     {
-        return $this->block;
+        return $this->blocks;
     }
 }
