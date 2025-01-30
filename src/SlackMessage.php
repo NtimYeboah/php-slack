@@ -2,8 +2,6 @@
 
 namespace NtimYeboah\PhpSlack;
 
-require __DIR__ . '/../vendor/autoload.php';
-
 use NtimYeboah\PhpSlack\BlockKit\Blocks\Context;
 use NtimYeboah\PhpSlack\BlockKit\Blocks\Divider;
 use NtimYeboah\PhpSlack\BlockKit\Blocks\Header;
