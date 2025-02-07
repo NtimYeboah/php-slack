@@ -9,17 +9,37 @@ use RuntimeException;
 
 class Context extends Block
 {
+    /**
+     * The element field for the block
+     *
+     * @var array
+     */
     private array $elements = [];
 
+    /**
+     * The blocks to be rendered.
+     *
+     * @var array
+     */
     protected array $blocks = [
         'type' => 'context',
     ];
 
+    /**
+     * Get the blocks to be rendered.
+     *
+     * @return array
+     */
     protected function blocks(): array
     {
         return $this->blocks;
     }
 
+    /**
+     * Render the block.
+     *
+     * @return array
+     */
     public function render(): array
     {
         if (count($this->elements) > 0) {
@@ -29,6 +49,12 @@ class Context extends Block
         return $this->blocks();
     }
 
+    /**
+     * Add a text element to the block.
+     *
+     * @param string $text
+     * @return self
+     */
     public function text(string $text): self
     {
         $text = (new Text)
@@ -40,7 +66,13 @@ class Context extends Block
         return $this;
     }
 
-    public function image(string $url)
+    /**
+     * Set the image url for the block.
+     *
+     * @param string $url
+     * @return self
+     */
+    public function image(string $url): self
     {
         $image = (new Image)->url($url);
 
@@ -49,7 +81,13 @@ class Context extends Block
         return $this;
     }
 
-    public function altText(string $text)
+    /**
+     * Set the alt text for the last image element.
+     *
+     * @param string $text
+     * @return self
+     */
+    public function altText(string $text): self
     {
         $last = $this->elements[count($this->elements) - 1];
 
@@ -62,7 +100,12 @@ class Context extends Block
         return $this;
     }
 
-    public function markdown()
+    /**
+     * Set the markdown flag for the last text element.
+     *
+     * @return self
+     */
+    public function markdown(): self
     {
         $last = $this->elements[count($this->elements) - 1];
 
@@ -71,6 +114,11 @@ class Context extends Block
         return $this;
     }
 
+    /**
+     * Render the element fields.
+     *
+     * @return array
+     */
     protected function elements(): array
     {
         $blocks = [];

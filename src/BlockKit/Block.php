@@ -4,6 +4,11 @@ namespace NtimYeboah\PhpSlack\BlockKit;
 
 abstract class Block
 {
+    /**
+     * The blocks to be rendered.
+     *
+     * @var array
+     */
     protected array $blocks;
 
     protected abstract function blocks(): array;

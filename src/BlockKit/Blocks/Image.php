@@ -7,7 +7,13 @@ use NtimYeboah\PhpSlack\BlockKit\Composites\Text;
 
 class Image extends CompositesImage
 {
-    public function title(string $text)
+    /**
+     * Set the title of the block.
+     *
+     * @param string $text
+     * @var array
+     */
+    public function title(string $text): self
     {
         $text = (new Text)
             ->text($text)
@@ -18,7 +24,13 @@ class Image extends CompositesImage
         return $this;
     }
 
-    public function slackFileUrl(string $url)
+    /**
+     * Set the slack file url url for the block.
+     *
+     * @param string $url
+     * @return self
+     */
+    public function slackFileUrl(string $url): self
     {
         $this->blocks['slack_file'] = [
             'url' => $url,
