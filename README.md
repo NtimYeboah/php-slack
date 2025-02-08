@@ -63,20 +63,20 @@ $credentials = Credentials::make('general', 'xoxb-123abc');
 The above generates these blocks.
 ```
 [
-      {
-          "type": "section",
-          "fields": [
-              {
-                  "type": "mrkdwn",
-                  "text": "This is a field"
-              },
-              {
-                  "type": "plain_text",
-                  "text": "This is another field"
-              }
-          ]
-      }
-  ]
+    {
+        "type": "section",
+        "fields": [
+            {
+                "type": "mrkdwn",
+                "text": "This is a field"
+            },
+            {
+                "type": "plain_text",
+                "text": "This is another field"
+            }
+        ]
+    }
+]
 ```
 
 ### Sending messages using the Context block
@@ -95,25 +95,25 @@ $credentials = Credentials::make('general', 'xoxb-123abc');
 The above generates these blocks.
 ```
 [
-      {
-          "type": "context",
-          "elements": [
-              {
-                  "type": "mrkdwn",
-                  "text": "*This* is :smile markdown"
-              },
-              {
-                  "type": "image",
-                  "image_url": "http:\/\/path\/to\/image.jpg",
-                  "alt_text": "cute cat"
-              },
-              {
-                  "type": "plain_text",
-                  "text": "This is a plain text"
-              }
-          ]
-      }
-  ]
+    {
+        "type": "context",
+        "elements": [
+            {
+                "type": "mrkdwn",
+                "text": "*This* is :smile markdown"
+            },
+            {
+                "type": "image",
+                "image_url": "http:\/\/path\/to\/image.jpg",
+                "alt_text": "cute cat"
+            },
+            {
+                "type": "plain_text",
+                "text": "This is a plain text"
+            }
+        ]
+    }
+]
 ```
 
 ### Sending messages using the Header block
@@ -130,13 +130,13 @@ $credentials = Credentials::make('general', 'xoxb-123abc');
 The code above generates these blocks.
 ```
 [
-   {
+    {
         "type": "header",
         "text": {
             "type": "plain_text",
             "text": "This is a header text"
-       }
-   }
+        }
+    }
 ]
 ```
 
@@ -212,9 +212,9 @@ $credentials = Credentials::make('general', 'xoxb-123abc');
 The above generates this block.
 ```
 [
-	{
-		"type": "divider"
-	}
+    {
+		type": "divider"
+    }
 ]
 ```
 
