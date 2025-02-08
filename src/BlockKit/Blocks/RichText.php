@@ -8,12 +8,27 @@ use NtimYeboah\PhpSlack\BlockKit\Block;
 
 class RichText extends Block
 {
+    /**
+     * The elements field of the block.
+     *
+     * @var array
+     */
     private array $elements = [];
 
+    /**
+     * The blocks to be rendered.
+     *
+     * @var array
+     */
     protected array $blocks = [
         'type' => 'rich_text',
     ];
 
+    /**
+     * Render the block.
+     *
+     * @return array
+     */
     public function render(): array
     {
         if (count($this->elements) > 0) {
@@ -23,12 +38,23 @@ class RichText extends Block
         return $this->blocks();
     }
 
+    /**
+     * Get the blocks to be rendered.
+     *
+     * @return array
+     */
     protected function blocks(): array
     {
         return $this->blocks;
     }
 
-    public function text(string $text)
+    /**
+     * Add a text element to the block.
+     *
+     * @param string $text
+     * @return self
+     */
+    public function text(string $text): self
     {
         $text = (new Text)->text($text);
 
@@ -37,7 +63,12 @@ class RichText extends Block
         return $this;
     }
 
-    public function bold()
+    /**
+     * Set the type of the last block to bold.
+     *
+     * @return self
+     */
+    public function bold(): self
     {
         $last = $this->elements[count($this->elements) - 1];
 
@@ -46,7 +77,12 @@ class RichText extends Block
         return $this;
     }
 
-    public function italic()
+    /**
+     * Set the type of the last block to italic.
+     *
+     * @return self
+     */
+    public function italic(): self
     {
         $last = $this->elements[count($this->elements) - 1];
 
@@ -55,7 +91,12 @@ class RichText extends Block
         return $this;
     }
 
-    public function strike()
+    /**
+     * Set the type of the last block to strikethrough.
+     *
+     * @return self
+     */
+    public function strike(): self
     {
         $last = $this->elements[count($this->elements) - 1];
 
@@ -64,7 +105,13 @@ class RichText extends Block
         return $this;
     }
 
-    public function emoji(string $name)
+    /**
+     * Add an emoji element to the block.
+     *
+     * @param string $name
+     * @return self
+     */
+    public function emoji(string $name): self
     {
         $text = (new Emoji)->name($name);
 
@@ -73,6 +120,11 @@ class RichText extends Block
         return $this;
     }
 
+    /**
+     * Get the elements to be rendered.
+     *
+     * @return array
+     */
     protected function elements(): array
     {
         $texts = [];

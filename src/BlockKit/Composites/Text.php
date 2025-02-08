@@ -6,53 +6,97 @@ use NtimYeboah\PhpSlack\BlockKit\Block;
 
 class Text extends Block
 {
+    /**
+     * The block types.
+     */
     protected const TEXT = 'text';
     protected const MARKDOWN = 'mrkdwn';
     protected const PLAIN_TEXT = 'plain_text';
 
+    /**
+     * The blocks to be rendered.
+     *
+     * @var array
+     */
     protected array $blocks = [
         'type' => self::TEXT,
     ];
 
+    /**
+     * Render the block.
+     *
+     * @return array
+     */
     public function render(): array
     {
         return $this->blocks();
     }
 
+    /**
+     * Get the blocks to be rendered.
+     *
+     * @return array
+     */
     protected function blocks(): array
     {
         return $this->blocks;
     }
 
-    public function text(String $text)
+    /**
+     * Set the text for the block.
+     *
+     * @param string $text
+     * @return self
+     */
+    public function text(String $text): self
     {
         $this->blocks['text'] = $text;
 
         return $this;
     }
 
-    public function markdown()
+    /**
+     * Set the type of the block to markdown.
+     *
+     * @return self
+     */
+    public function markdown(): self
     {
         $this->blocks['type'] = self::MARKDOWN;
 
         return $this;
     }
 
-    public function plain()
+    /**
+     * Set the type of the block to plain text.
+     *
+     * @return self
+     */
+    public function plain(): self
     {
         $this->blocks['type'] = self::PLAIN_TEXT;
 
         return $this;
     }
 
-    public function emoji()
+    /**
+     * Set the emoji flag for the block.
+     *
+     * @return self
+     */
+    public function emoji(): self
     {
         $this->blocks['emoji'] = true;
 
         return $this;
     }
 
-    public function bold()
+    /**
+     * Set the bold style flag for the block.
+     *
+     * @return self
+     */
+    public function bold(): self
     {
         $bold = (new TextStyle)
             ->bold()
@@ -63,7 +107,12 @@ class Text extends Block
         return $this;
     }
 
-    public function italic()
+    /**
+     * Set the italic flag for the block.
+     *
+     * @return self
+     */
+    public function italic(): self
     {
         $italic = (new TextStyle)
             ->italic()
@@ -74,7 +123,12 @@ class Text extends Block
         return $this;
     }
 
-    public function strike()
+    /**
+     * Set the strike-through flag for the block.
+     *
+     * @return self
+     */
+    public function strike(): self
     {
         $strike = (new TextStyle)
             ->strike()
@@ -85,7 +139,12 @@ class Text extends Block
         return $this;
     }
 
-    public function placeholder(string $text)
+    /**
+     * Set the placeholder text for the block.
+     *
+     * @return self
+     */
+    public function placeholder(string $text): self
     {
         return $this->text($text)
             ->plain();

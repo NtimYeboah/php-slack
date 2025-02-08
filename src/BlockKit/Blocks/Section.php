@@ -9,14 +9,34 @@ use RuntimeException;
 
 class Section extends Block
 {
+    /**
+     * The blocks to be rendered.
+     *
+     * @var array
+     */
     protected array $blocks = [
         'type' => 'section',
     ];
 
+    /**
+     * The fields key of the block.
+     *
+     * @var array
+     */
     protected array $fields = [];
 
-    protected array $accessory = [];
+    /**
+     * The accessories key of the block.
+     *
+     * @var array
+     */
+    protected array $accessories = [];
 
+    /**
+     * Render the block.
+     *
+     * @return array
+     */
     public function render(): array
     {
         if (count($this->getFields())) {
@@ -24,18 +44,29 @@ class Section extends Block
         }
         
         if (count($this->getAccessories())) {
-            $this->blocks['accessory'] = $this->getAccessories();
+            $this->blocks['accessories'] = $this->getAccessories();
         }
         
         return $this->blocks();
     }
 
+    /**
+     * Get the blocks to be rendered.
+     *
+     * @return array
+     */
     public function blocks(): array
     {
         return $this->blocks;
     }
 
-    public function text($text = null)
+    /**
+     * Set the type of the block to a text.
+     *
+     * @param string $text
+     * @return self
+     */
+    public function text($text = null): self
     {
         if ($text === null) {
             $last = $this->fields[count($this->fields) - 1];
@@ -59,7 +90,13 @@ class Section extends Block
         return $this;
     }
 
-    public function markdown($text = null)
+    /**
+     * Set the type of the block to markdown.
+     *
+     * @param string|null $text
+     * @return self
+     */
+    public function markdown($text = null): self
     {
         if ($text === null) {
             $last = $this->fields[count($this->fields) - 1];
@@ -82,33 +119,32 @@ class Section extends Block
         return $this;
     }
 
-    public function usersSelect(Closure $callable)
+    /**
+     * Add a user select field the block.
+     *
+     * @param Closure $callable
+     * @return self
+     */
+    public function usersSelect(Closure $callable): self
     {
         $block = $text = (new Text);
 
         $callable($text);
 
-        $this->accessory['placeholder'] = $block->render();
-        $this->accessory['action_id'] = 'users_select-action';
-        $this->accessory['type'] = 'users_select';
+        $this->accessories['placeholder'] = $block->render();
+        $this->accessories['action_id'] = 'users_select-action';
+        $this->accessories['type'] = 'users_select';
 
         return $this;
     }
 
-   /*  public function staticSelect(Closure $callable)
-    {
-        $block = $text = (new Text);
-
-        $callable($text);
-
-        $this->accessory['options'] = $block->render();
-        $this->accessory['action_id'] = 'static_select-action';
-        $this->accessory['type'] = 'static_select';
-
-        return $this;
-    } */
-
-    public function field(string $text)
+    /**
+     * Add a field to the block.
+     *
+     * @param string $text
+     * @return self
+     */
+    public function field(string $text): self
     {
         $text = (new Text)
             ->text($text)
@@ -119,7 +155,12 @@ class Section extends Block
         return $this;
     }
 
-    public function getFields()
+    /**
+     * Get the fields to be rendered.
+     *
+     * @return array
+     */
+    public function getFields(): array
     {
         $fields = [];
 
@@ -130,8 +171,13 @@ class Section extends Block
         return $fields;
     }
 
-    public function getAccessories()
+    /**
+     * Get the accessories key of the block.
+     *
+     * @return array
+     */
+    public function getAccessories(): array
     {
-        return $this->accessory;
+        return $this->accessories;
     }
 }
