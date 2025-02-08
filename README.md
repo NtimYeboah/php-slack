@@ -213,7 +213,7 @@ The above generates this block.
 ```
 [
     {
-		type": "divider"
+        type": "divider"
     }
 ]
 ```
