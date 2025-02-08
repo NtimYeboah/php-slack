@@ -380,7 +380,8 @@ class SlackMessage
             throw new InvalidArgumentException('Slack messages can only contain up to 50 blocks.');
         }
 
-        return array_filter([
+        return array_filter(
+            [
                 'blocks' => empty($this->blocks) ? null : $this->blocks,
                 'icon_emoji' => $this->icon,
                 'icon_url' => $this->imageIcon,
@@ -407,7 +408,8 @@ class SlackMessage
             $this->credentials = Credentials::make($this->channel, $this->token);
         }
 
-        // Validate auth credentials
-        return Request::send($this->credentials, $this->getPayload());
+        $request = new Request($this->credentials, $this->getPayload());
+
+        return $request->send();
     }
 }

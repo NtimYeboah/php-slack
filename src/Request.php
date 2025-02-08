@@ -7,8 +7,18 @@ use Psr\Http\Message\ResponseInterface;
 
 class Request
 {
+    /**
+     * The Slack API credentials.
+     *
+     * @var Credentials
+     */
     private Credentials $credentials;
 
+    /**
+     * The payload to be sent to Slack API.
+     *
+     * @var array
+     */
     private array $payload;
 
     public function __construct(Credentials $credentials, array $payload)
@@ -18,24 +28,11 @@ class Request
     }
 
     /**
-     * Send request to Slack.
-     *
-     * @param array $payload
-     * @return ResponseInterface
-     */
-    public static function send(Credentials $credentials, array $payload): ResponseInterface
-    {
-        $self = new static($credentials, $payload);
-
-        return $self->make();
-    }
-
-    /**
-     * Make request to Slack.
+     * Send the request to the Slack API.
      *
      * @return ResponseInterface
      */
-    private function make(): ResponseInterface
+    public function send(): ResponseInterface
     {
         $payload = array_merge(
             $this->payload, 
