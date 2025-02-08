@@ -1,7 +1,6 @@
 Integrate Slack into your PHP applications
 ==========================================
 
-[![Total Downloads](https://img.shields.io/packagist/dt/ntimyeboah/php-slack.svg?style=flat-square)](https://packagist.org/packages/ntimyeboah/laravel-database-trigger)
 ![Build Status](https://github.com/NtimYeboah/php-slack/actions/workflows/test.yml/badge.svg)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
@@ -46,11 +45,6 @@ $slackMessage->text('Hello')
 $slackMessage->send();
 ```
 
-Write about all the other options you can use to send a message
-Sending messages unfurling links
-```php
-```
-
 ## Advanced Usage
 This package make it easy to send messages using the BlockKit framework to customize and order the appearance of your messages.
 
@@ -69,20 +63,20 @@ $credentials = Credentials::make('general', 'xoxb-123abc');
 The above generates these blocks.
 ```
 [
-    [
-        'type' => 'section',
-        'fields' => [
-            [
-                'type' => 'mrkdwn',
-                'text' => 'This is a field',
-            ],
-            [
-                'type' => 'plain_text',
-                'text' => 'This is another field',
-            ]
-        ]
-    ]
-]
+      {
+          "type": "section",
+          "fields": [
+              {
+                  "type": "mrkdwn",
+                  "text": "This is a field"
+              },
+              {
+                  "type": "plain_text",
+                  "text": "This is another field"
+              }
+          ]
+      }
+  ]
 ```
 
 ### Sending messages using the Context block
@@ -101,25 +95,25 @@ $credentials = Credentials::make('general', 'xoxb-123abc');
 The above generates these blocks.
 ```
 [
-    [
-        'type' => 'context',
-        'elements' => [
-            [
-                'type' => 'mrkdwn',
-                'text' => "*This* is :smile markdown",
-            ],
-            [
-                'type' => 'image',
-                'image_url' => 'http://path/to/image.jpg',
-                'alt_text' => 'cute cat',
-            ],
-            [
-                'type' => 'plain_text',
-                'text' => 'This is a plain text',
-            ],
-        ],
-    ],
-]
+      {
+          "type": "context",
+          "elements": [
+              {
+                  "type": "mrkdwn",
+                  "text": "*This* is :smile markdown"
+              },
+              {
+                  "type": "image",
+                  "image_url": "http:\/\/path\/to\/image.jpg",
+                  "alt_text": "cute cat"
+              },
+              {
+                  "type": "plain_text",
+                  "text": "This is a plain text"
+              }
+          ]
+      }
+  ]
 ```
 
 ### Sending messages using the Header block
@@ -136,13 +130,13 @@ $credentials = Credentials::make('general', 'xoxb-123abc');
 The code above generates these blocks.
 ```
 [
-    [
-        'type' => 'header',
-        'text' => [
-            'type' => 'plain_text',
-            'text' => 'This is a header text',
-        ],
-    ]
+   {
+        "type": "header",
+        "text": {
+            "type": "plain_text",
+            "text": "This is a header text"
+       }
+   }
 ]
 ```
 
@@ -164,45 +158,45 @@ $credentials = Credentials::make('general', 'xoxb-123abc');
 The above generates these blocks.
 ```
 [
-    [
-        'type' => 'rich_text',
-        'elements' => [
-            [
-                'type' => 'rich_text_section',
-                'elements' => [
-                    [
-                        'type' => 'text',
-                        'text' => 'This is a text',
-                    ],
-                    [
-                        'type' => 'text',
-                        'text' => 'This is a bold text',
-                        'style' => [
-                            'bold' => true,
-                        ],
-                    ],
-                    [
-                        'type' => 'text',
-                        'text' => 'This is an italic text',
-                        'style' => [
-                            'italic' => true,
-                        ],
-                    ],
-                    [
-                        'type' => 'text',
-                        'text' => 'This is a strikethrough text',
-                        'style' => [
-                            'strike' => true,
-                        ],
-                    ],
-                    [
-                        'type' => 'emoji',
-                        'name' => 'basketball',
-                    ],
+    {
+        "type": "rich_text",
+        "elements": [
+            {
+                "type": "rich_text_section",
+                "elements": [
+                    {
+                        "type": "text",
+                        "text": "This is a text"
+                    },
+                    {
+                        "type": "text",
+                        "text": "This is a bold text",
+                        "style": {
+                            "bold": true
+                        }
+                    },
+                    {
+                        "type": "text",
+                            "text": "This is an italic text",
+                            "style": {
+                                "italic": true
+                        }
+                    },
+                    {
+                        "type": "text",
+                        "text": "This is a strikethrough text",
+                        "style": {
+                            "strike": true
+                        }
+                    },
+                    {
+                        "type": "emoji",
+                        "name": "basketball"
+                    }
                 ]
-            ]
+            }
         ]
-    ]  
+    }
 ]
 ```
 
@@ -218,9 +212,9 @@ $credentials = Credentials::make('general', 'xoxb-123abc');
 The above generates this block.
 ```
 [
-    [
-        'type' => 'divider',
-    ]
+	{
+		"type": "divider"
+	}
 ]
 ```
 
