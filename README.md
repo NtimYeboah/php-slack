@@ -51,6 +51,9 @@ This package make it easy to send messages using the BlockKit framework to custo
 ### Sending messages using the Section block
 Use the `section($closure)` method to send a Section block.
 ```php
+use NtimYeboah\PhpSlack\Credentials;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Section;
+
 $credentials = Credentials::make('general', 'xoxb-123abc');
 
 (new SlackMessage($credentials))
@@ -82,6 +85,9 @@ The above generates these blocks.
 ### Sending messages using the Context block
 Use the `context($closure)` method to send a Context block.
 ```php
+use NtimYeboah\PhpSlack\Credentials;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Context;
+
 $credentials = Credentials::make('general', 'xoxb-123abc');
 
 (new SlackMessage($credentials))
@@ -119,6 +125,9 @@ The above generates these blocks.
 ### Sending messages using the Header block
 Use the `header($closure)` method to send a Header block.
 ```php
+use NtimYeboah\PhpSlack\Credentials;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\Header;
+
 $credentials = Credentials::make('general', 'xoxb-123abc');
 
 (new SlackMessage($credentials))
@@ -143,6 +152,9 @@ The code above generates these blocks.
 ### Sending messages using the RichText block
 Use the `richText($closure)` method to send a Rich Text block.
 ```php
+use NtimYeboah\PhpSlack\Credentials;
+use NtimYeboah\PhpSlack\BlockKit\Blocks\RichText;
+
 $credentials = Credentials::make('general', 'xoxb-123abc');
 
 (new SlackMessage($credentials))
@@ -203,6 +215,8 @@ The above generates these blocks.
 ### Sending messages using the Divider block
 Use the `divider()` method to send a Divider block.
 ```php
+use NtimYeboah\PhpSlack\Credentials;
+
 $credentials = Credentials::make('general', 'xoxb-123abc');
 
 (new SlackMessage($credentials))
